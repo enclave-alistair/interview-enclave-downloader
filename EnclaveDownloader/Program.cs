@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Net;
+using System.Text;
 
 namespace EnclaveDownloader
 {
@@ -12,11 +13,19 @@ namespace EnclaveDownloader
         {
             Console.Write("Downloading Manifest...");
 
-            var manifestBytes = Download(ManifestUrl);
+            var manifestContent = DownloadString(ManifestUrl);
 
             // TODO: Parse manifest into a Manifest instance.
             //       Download all the files simultaneously and verify their hashes before copying to the current folder.
             //       Return a non-zero exit codes if any of the files are invalid.
+        }
+
+        /// <summary>
+        /// Download a file and get a string.
+        /// </summary>
+        public static string DownloadString(string url)
+        {
+            return Encoding.ASCII.GetString(Download(url));
         }
 
         /// <summary>
