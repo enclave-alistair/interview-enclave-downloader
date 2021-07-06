@@ -25,3 +25,4 @@ This [video of a Docker Pull command](https://asciinema.org/a/310605) demonstrat
 
 ## Example Screenshot
 
+![image](https://user-images.githubusercontent.com/67738909/124622881-64485780-de73-11eb-9563-fbd8365244cb.png)
